@@ -201,7 +201,7 @@ h1 {
     "img4";
 }
 
-img .mapa{
+img .mapa {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -231,7 +231,7 @@ textarea {
 .grid-header {
   display: flex;
 }
-.grid-row{
+.grid-row {
   grid-row: 2;
 }
 .grid-header {
@@ -256,6 +256,13 @@ textarea {
 .header-item:nth-child(1) {
   width: 100px;
 }
+.container {
+  width: 100%;
+  /* padding-right: 15px; */
+  /* padding-left: 15px; */
+  margin-right: 55px;
+  margin-left: 55px;
+}
 @media (min-width: 500px) {
   .wrapper {
     grid-template-columns: 1fr 3fr;
@@ -271,16 +278,22 @@ textarea {
     grid-template-columns: repeat(12, 1fr);
     gap: 10px;
   }
+  .aumentar {
+    transition: transform 0.5s ease-in;
+  }
+  .aumentar:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+  }
   input[type="text"],
   input[type="email"] {
-
     margin: 0;
     margin-right: 10px;
   }
-  .input-compañero{
+  .input-compañero {
     grid-row: 3;
   }
-  .input-telefono{
+  .input-telefono {
     grid-row: 4;
   }
   nav ul {

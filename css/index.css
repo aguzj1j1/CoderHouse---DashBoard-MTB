@@ -263,6 +263,15 @@ textarea {
   margin-right: 55px;
   margin-left: 55px;
 }
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #212529c4 !important;
+  background-color: #e9ecef30  !important;
+  font-weight: 600 !important;
+}
+.text-black{
+  color: #212529c4 !important;
+  font-weight: 600 !important;
+}
 @media (min-width: 500px) {
   .wrapper {
     grid-template-columns: 1fr 3fr;
@@ -341,11 +350,24 @@ textarea {
   nav.nav-Custom-desktop {
     background-color: #ccc;
     float: left;
-    height: 851px;
+    height: auto;
     margin-right: 29px;
     display: block !important;
   }
   select.idiomas {
     margin-left: 90%;
   }
+  .navbar-sidebar {
+    width: 280px;
+    height: 760px;
+  }
+  .bg-green {
+    background-color: #ccc !important;
+  }
+  
+ 
+}
+
+nav ul li a:hover {
+  background: #1e1e1e;
 }

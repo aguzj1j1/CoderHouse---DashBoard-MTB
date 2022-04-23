@@ -6,12 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Experiencia</title>
 </head>
 
 <body>
-  <header>
+  <header class="main-head">
     <label for="menu" class="burgerMenu">
       <i class="fa-solid fa-bars"></i>
     </label>
@@ -21,33 +26,46 @@
         <i class="fa-solid fa-circle-xmark"></i>
       </label>
       <div class="persona-mobile">
-        <select id="idioma" class="idiomas" name="idioma" size="3">
+        <!-- <select id="idioma" class="idiomas" name="idioma" size="3">
           <option value="volvo" selected>Español</option>
           <option value="saab">Ingles</option>
           <option value="fiat">Portugues</option>
           <option value="audi">Frances</option>
-        </select>
-        <svg width="85" height="43" viewBox="0 0 85 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M34.6406 10.5703L31.5469 20H29.0547L33.2812 8.625H34.8672L34.6406 10.5703ZM37.2109 20L34.1094 10.5703L33.8594 8.625H35.4609L39.7109 20H37.2109ZM37.0703 15.7656V17.6016H31.0625V15.7656H37.0703ZM45.9766 11.5469H48.0156V19.7188C48.0156 20.4896 47.8438 21.1432 47.5 21.6797C47.1615 22.2214 46.6875 22.6302 46.0781 22.9062C45.4688 23.1875 44.7604 23.3281 43.9531 23.3281C43.599 23.3281 43.224 23.2812 42.8281 23.1875C42.4375 23.0938 42.0625 22.9479 41.7031 22.75C41.349 22.5521 41.0521 22.3021 40.8125 22L41.8047 20.6719C42.0651 20.974 42.3672 21.2083 42.7109 21.375C43.0547 21.5469 43.4349 21.6328 43.8516 21.6328C44.2578 21.6328 44.6016 21.5573 44.8828 21.4062C45.1641 21.2604 45.3802 21.0443 45.5312 20.7578C45.6823 20.4766 45.7578 20.1354 45.7578 19.7344V13.5L45.9766 11.5469ZM40.2891 15.875V15.7109C40.2891 15.0651 40.3672 14.4792 40.5234 13.9531C40.6849 13.4219 40.9115 12.9661 41.2031 12.5859C41.5 12.2057 41.8594 11.9115 42.2812 11.7031C42.7031 11.4948 43.1797 11.3906 43.7109 11.3906C44.2734 11.3906 44.7448 11.4948 45.125 11.7031C45.5052 11.9115 45.8177 12.2083 46.0625 12.5938C46.3073 12.974 46.4974 13.4245 46.6328 13.9453C46.7734 14.4609 46.8828 15.026 46.9609 15.6406V16C46.8828 16.5885 46.7656 17.1354 46.6094 17.6406C46.4531 18.1458 46.2474 18.5885 45.9922 18.9688C45.737 19.3438 45.4193 19.6354 45.0391 19.8438C44.6641 20.0521 44.2161 20.1562 43.6953 20.1562C43.1745 20.1562 42.7031 20.0495 42.2812 19.8359C41.8646 19.6224 41.5078 19.3229 41.2109 18.9375C40.9141 18.5521 40.6849 18.099 40.5234 17.5781C40.3672 17.0573 40.2891 16.4896 40.2891 15.875ZM42.5391 15.7109V15.875C42.5391 16.224 42.5729 16.5495 42.6406 16.8516C42.7083 17.1536 42.8125 17.4219 42.9531 17.6562C43.099 17.8854 43.2786 18.0651 43.4922 18.1953C43.7109 18.3203 43.9688 18.3828 44.2656 18.3828C44.6771 18.3828 45.013 18.2969 45.2734 18.125C45.5339 17.9479 45.7292 17.7057 45.8594 17.3984C45.9896 17.0911 46.0651 16.737 46.0859 16.3359V15.3125C46.0755 14.9844 46.0312 14.6901 45.9531 14.4297C45.875 14.1641 45.7656 13.9375 45.625 13.75C45.4844 13.5625 45.3021 13.4167 45.0781 13.3125C44.8542 13.2083 44.5885 13.1562 44.2812 13.1562C43.9844 13.1562 43.7266 13.224 43.5078 13.3594C43.2943 13.4896 43.1146 13.6693 42.9688 13.8984C42.8281 14.1276 42.7214 14.3984 42.6484 14.7109C42.5755 15.0182 42.5391 15.3516 42.5391 15.7109ZM54.7656 17.9766V11.5469H57.0156V20H54.8984L54.7656 17.9766ZM55.0156 16.2422L55.6797 16.2266C55.6797 16.7891 55.6146 17.3125 55.4844 17.7969C55.3542 18.276 55.1589 18.6927 54.8984 19.0469C54.638 19.3958 54.3099 19.6693 53.9141 19.8672C53.5182 20.0599 53.0521 20.1562 52.5156 20.1562C52.1042 20.1562 51.724 20.099 51.375 19.9844C51.0312 19.8646 50.7344 19.6797 50.4844 19.4297C50.2396 19.1745 50.0469 18.849 49.9062 18.4531C49.7708 18.0521 49.7031 17.5703 49.7031 17.0078V11.5469H51.9531V17.0234C51.9531 17.2734 51.9818 17.4844 52.0391 17.6562C52.1016 17.8281 52.1875 17.9688 52.2969 18.0781C52.4062 18.1875 52.5339 18.2656 52.6797 18.3125C52.8307 18.3594 52.9974 18.3828 53.1797 18.3828C53.6432 18.3828 54.0078 18.2891 54.2734 18.1016C54.5443 17.9141 54.7344 17.6589 54.8438 17.3359C54.9583 17.0078 55.0156 16.6432 55.0156 16.2422ZM63.3047 17.6641C63.3047 17.5026 63.2578 17.3568 63.1641 17.2266C63.0703 17.0964 62.8958 16.9766 62.6406 16.8672C62.3906 16.7526 62.0286 16.6484 61.5547 16.5547C61.1276 16.4609 60.7292 16.3438 60.3594 16.2031C59.9948 16.0573 59.6771 15.8828 59.4062 15.6797C59.1406 15.4766 58.9323 15.237 58.7812 14.9609C58.6302 14.6797 58.5547 14.3594 58.5547 14C58.5547 13.6458 58.6302 13.3125 58.7812 13C58.9375 12.6875 59.1589 12.4115 59.4453 12.1719C59.737 11.9271 60.0911 11.737 60.5078 11.6016C60.9297 11.4609 61.4036 11.3906 61.9297 11.3906C62.6641 11.3906 63.2943 11.5078 63.8203 11.7422C64.3516 11.9766 64.7578 12.2995 65.0391 12.7109C65.3255 13.1172 65.4688 13.5807 65.4688 14.1016H63.2188C63.2188 13.8828 63.1719 13.6875 63.0781 13.5156C62.9896 13.3385 62.849 13.2005 62.6562 13.1016C62.4688 12.9974 62.224 12.9453 61.9219 12.9453C61.6719 12.9453 61.4557 12.9896 61.2734 13.0781C61.0911 13.1615 60.9505 13.276 60.8516 13.4219C60.7578 13.5625 60.7109 13.7188 60.7109 13.8906C60.7109 14.0208 60.737 14.138 60.7891 14.2422C60.8464 14.3411 60.9375 14.4323 61.0625 14.5156C61.1875 14.599 61.349 14.6771 61.5469 14.75C61.75 14.8177 62 14.8802 62.2969 14.9375C62.9062 15.0625 63.4505 15.2266 63.9297 15.4297C64.4089 15.6276 64.7891 15.8984 65.0703 16.2422C65.3516 16.5807 65.4922 17.026 65.4922 17.5781C65.4922 17.9531 65.4089 18.2969 65.2422 18.6094C65.0755 18.9219 64.8359 19.1953 64.5234 19.4297C64.2109 19.6589 63.8359 19.8385 63.3984 19.9688C62.9661 20.0938 62.4792 20.1562 61.9375 20.1562C61.151 20.1562 60.4844 20.0156 59.9375 19.7344C59.3958 19.4531 58.9844 19.0964 58.7031 18.6641C58.4271 18.2266 58.2891 17.7786 58.2891 17.3203H60.4219C60.4323 17.6276 60.5104 17.875 60.6562 18.0625C60.8073 18.25 60.9974 18.3854 61.2266 18.4688C61.4609 18.5521 61.7135 18.5938 61.9844 18.5938C62.276 18.5938 62.5182 18.5547 62.7109 18.4766C62.9036 18.3932 63.0495 18.2839 63.1484 18.1484C63.2526 18.0078 63.3047 17.8464 63.3047 17.6641ZM71.0938 11.5469V13.1406H66.1719V11.5469H71.0938ZM67.3906 9.46094H69.6406V17.4531C69.6406 17.6979 69.6719 17.8854 69.7344 18.0156C69.8021 18.1458 69.901 18.237 70.0312 18.2891C70.1615 18.3359 70.3255 18.3594 70.5234 18.3594C70.6641 18.3594 70.7891 18.3542 70.8984 18.3438C71.013 18.3281 71.1094 18.3125 71.1875 18.2969L71.1953 19.9531C71.0026 20.0156 70.7943 20.0651 70.5703 20.1016C70.3464 20.138 70.099 20.1562 69.8281 20.1562C69.3333 20.1562 68.901 20.0755 68.5312 19.9141C68.1667 19.7474 67.8854 19.4818 67.6875 19.1172C67.4896 18.7526 67.3906 18.2734 67.3906 17.6797V9.46094ZM74.75 11.5469V20H72.4922V11.5469H74.75ZM72.3516 9.34375C72.3516 9.01562 72.4661 8.74479 72.6953 8.53125C72.9245 8.31771 73.2318 8.21094 73.6172 8.21094C73.9974 8.21094 74.3021 8.31771 74.5312 8.53125C74.7656 8.74479 74.8828 9.01562 74.8828 9.34375C74.8828 9.67188 74.7656 9.94271 74.5312 10.1562C74.3021 10.3698 73.9974 10.4766 73.6172 10.4766C73.2318 10.4766 72.9245 10.3698 72.6953 10.1562C72.4661 9.94271 72.3516 9.67188 72.3516 9.34375ZM78.8125 13.3516V20H76.5625V11.5469H78.6719L78.8125 13.3516ZM78.4844 15.4766H77.875C77.875 14.8516 77.9557 14.2891 78.1172 13.7891C78.2786 13.2839 78.5052 12.8542 78.7969 12.5C79.0885 12.1406 79.4349 11.8672 79.8359 11.6797C80.2422 11.487 80.6953 11.3906 81.1953 11.3906C81.5911 11.3906 81.9531 11.4479 82.2812 11.5625C82.6094 11.6771 82.8906 11.8594 83.125 12.1094C83.3646 12.3594 83.5469 12.6901 83.6719 13.1016C83.8021 13.513 83.8672 14.0156 83.8672 14.6094V20H81.6016V14.6016C81.6016 14.2266 81.5495 13.9349 81.4453 13.7266C81.3411 13.5182 81.1875 13.3724 80.9844 13.2891C80.7865 13.2005 80.5417 13.1562 80.25 13.1562C79.9479 13.1562 79.6849 13.2161 79.4609 13.3359C79.2422 13.4557 79.0599 13.6224 78.9141 13.8359C78.7734 14.0443 78.6667 14.2891 78.5938 14.5703C78.5208 14.8516 78.4844 15.1536 78.4844 15.4766Z"
-            fill="black" />
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M16.5 2H8.5C5.18629 2 2.5 4.68629 2.5 8V16C2.5 17.7909 3.28464 19.3985 4.52889 20.4979C4.7865 17.5439 6.74219 15.0764 9.41438 14.077C8.36623 13.1964 7.7 11.876 7.7 10.4C7.7 7.74903 9.84903 5.6 12.5 5.6C15.151 5.6 17.3 7.74903 17.3 10.4C17.3 11.876 16.6338 13.1964 15.5856 14.077C18.2578 15.0764 20.2135 17.5439 20.4711 20.4979C21.7154 19.3985 22.5 17.7909 22.5 16V8C22.5 4.68629 19.8137 2 16.5 2ZM6.72335 21.7326C7.28478 21.9064 7.88146 22 8.5 22H16.5C17.1185 22 17.7152 21.9064 18.2766 21.7326C18.4152 21.5833 18.5 21.3834 18.5 21.1636C18.5 18.0909 16.0091 15.6 12.9364 15.6H12.0636C8.99092 15.6 6.5 18.0909 6.5 21.1636C6.5 21.3834 6.58475 21.5833 6.72335 21.7326ZM0.5 16C0.5 19.4515 2.68577 22.3925 5.74862 23.5143C6.20168 23.8209 6.7481 24 7.33636 24H8.5H16.5H17.6636C18.2519 24 18.7983 23.8209 19.2514 23.5143C22.3142 22.3925 24.5 19.4515 24.5 16V8C24.5 3.58172 20.9183 0 16.5 0H8.5C4.08172 0 0.5 3.58172 0.5 8V16ZM15.3 10.4C15.3 11.9464 14.0464 13.2 12.5 13.2C10.9536 13.2 9.7 11.9464 9.7 10.4C9.7 8.8536 10.9536 7.6 12.5 7.6C14.0464 7.6 15.3 8.8536 15.3 10.4Z"
-            fill="black" />
-        </svg>
+        </select> -->
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <strong class="text-black">Agustin</strong>
+        </a>
       </div>
-      <ul class="ul-navbar">
-        <li class="li-navbar"><a href="index.html"><img src="images/charts.png" alt="chart-descriptivo">Graficos</a>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active" aria-current="page">
+            <svg class="bi me-2" width="16" height="16"></svg>
+            Gráficos
+          </a>
         </li>
-        <li class="li-navbar"><a href="ubicaciones.html"><img src="images/ubicaciones.png"
-              alt="ubicacion-descriptivo">Ubicaciones</a>
+        <hr>
+        <li>
+          <a href="ubicaciones.html" class="nav-link text-black">
+            <svg class="bi me-2" width="16" height="16"></svg>
+            Ubicaciones
+          </a>
         </li>
-        <li class="li-navbar"><a href="salud.html">
-            <img src="images/salud.png" alt="salud-descriptivo">Salud</a>
+        <hr>
+        <li>
+          <a href="salud.html" class="nav-link text-black">
+            <svg class="bi me-2" width="16" height="16"></svg>
+            Salud
+          </a>
         </li>
-        <li class="li-navbar"><a href="configuracion.html"><img src="images/configuracion.png"
-              alt="configuracion-descriptivo">Configuración</a>
+        <hr>
+        <li>
+          <a href="configuracion.html" class="nav-link text-black">
+            <svg class="bi me-2" width="16" height="16"></svg>
+            Configuración
+          </a>
         </li>
+        <hr>
       </ul>
     </nav>
     <div class="persona-desktop">
@@ -78,36 +96,98 @@
   </header>
 
   <nav class="nav-Custom-desktop">
-    <!-- <div>
-      <i class="fa-solid fa-bars"></i>
-    </div> -->
-    <ul class="ul-navbar">
-      <li class="li-navbar"><a href="index.html"><img src="images/charts.png" alt="chart-descriptivo">Graficos</a></li>
-      <li class="li-navbar"><a href="ubicaciones.html"><img src="images/ubicaciones.png"
-            alt="ubicacion-descriptivo">Ubicaciones</a></li>
-      <li class="li-navbar"><a href="salud.html"><img src="images/salud.png" alt="salud-descriptivo">Salud</a></li>
-      <li class="li-navbar"><a href="configuracion.html"><img src="images/configuracion.png"
-            alt="configuracion-descriptivo">Configuración</a></li>
-    </ul>
+    <div class="d-flex flex-column flex-shrink-0 p-3  bg-green navbar-sidebar">
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active" aria-current="page">
+            <svg class="bi me-2" width="16" height="16"></svg>
+            Gráficos
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="ubicaciones.html" class="nav-link text-black">
+            <svg class="bi me-2" width="16" height="16"></svg>
+            Ubicaciones
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="salud.html" class="nav-link text-black">
+            <svg class="bi me-2" width="16" height="16"></svg>
+            Salud
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="configuracion.html" class="nav-link text-black">
+            <svg class="bi me-2" width="16" height="16"></svg>
+            Configuración
+          </a>
+        </li>
+        <hr>
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <strong class="text-black">Agustin</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+          <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
+          <li>
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Idiomas
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item active" href="#">Español</a></li>
+                <li><a class="dropdown-item" href="#">Ingles</a></li>
+                <li><a class="dropdown-item" href="#">Portugues</a></li>
+                <li><a class="dropdown-item" href="#">Frances</a></li>
+              </ul>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <main>
     <div>
       <h1> Ubicaciones </h1>
     </div>
-    <div>
-      <img src="images/mapa.png" alt="ubicaciones" class="mapa">
+      
+    <section class="charts-grid">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <img src="images/mapa.png" alt="ubicaciones" class="mapa" style="width: 100%;">
+          </div>
+        </div>
+      </div>
 
-    </div>
+    </section>
   </main>
   <footer>
-    <h3>Terminos y condiciones </br>
-      Alberto Marciano 348, Marcos Paz </br>
-      ® 2022 Agustin
-    </h3>
-
-
-    <img src="images/redes-sociales.png" alt="redes">
+    <div class="container">
+      <div class="row align-items-center mt-3 ">
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 ">
+          <h3>Terminos y condiciones</h3>
+          <h5>® 2022 Agustin</h5>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-center">
+          <img src="images/redes-sociales.png" alt="redes">
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-center">
+          <h5>Alberto Marciano 348, Marcos Paz</5>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 

@@ -10,6 +10,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Experiencia</title>
@@ -127,15 +132,16 @@
     <section class="charts-grid">
       <div class="container">
         <div class="row">
-          <div class="col-12  col-md-4 col-lg-4">
-            <img class="imagenes-graficos" src="images/latidos.png" alt="latidos">
+          <div class="col-xs-12  col-md-12">
+            <canvas id="myChart"></canvas>
+            <!-- <img class="imagenes-graficos" src="images/latidos.png" alt="latidos"> -->
           </div>
-          <div class="col-xs-12 col-md-4 col-lg-4">
-            <img src="images/bpm.png" alt="bpm">
+          <div class="col-xs-12 col-md-12">
+            <div id="bpm" class="gauge-container"></div>
           </div>
-          <div class="col-xs-12 col-md-4 col-lg-4">
+          <!-- <div class="col-xs-12 col-md-4 col-lg-4"> 
             <img class="imagenes-graficos" src="images/calorias.png" alt="calorias">
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -160,3 +166,186 @@
 </body>
 
 </html>
+<script>
+  const data = [];
+  const data2 = [];
+  let prev = 100;
+  let prev2 = 80;
+  for (let i = 0; i < 1000; i++) {
+    prev += 5 - Math.random() * 10;
+    data.push({ x: i, y: prev });
+    prev2 += 5 - Math.random() * 10;
+    data2.push({ x: i, y: prev2 });
+  }
+  const totalDuration = 10000;
+  const delayBetweenPoints = totalDuration / data.length;
+  const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+  const animation = {
+    x: {
+      type: 'number',
+      easing: 'linear',
+      duration: delayBetweenPoints,
+      from: NaN, // the point is initially skipped
+      delay(ctx) {
+        if (ctx.type !== 'data' || ctx.xStarted) {
+          return 0;
+        }
+        ctx.xStarted = true;
+        return ctx.index * delayBetweenPoints;
+      }
+    },
+    y: {
+      type: 'number',
+      easing: 'linear',
+      duration: delayBetweenPoints,
+      from: previousY,
+      delay(ctx) {
+        if (ctx.type !== 'data' || ctx.yStarted) {
+          return 0;
+        }
+        ctx.yStarted = true;
+        return ctx.index * delayBetweenPoints;
+      }
+    }
+  };
+  const CHART_COLORS = {
+    red: 'rgb(255, 99, 132)',
+    orange: 'rgb(255, 159, 64)',
+    yellow: 'rgb(255, 205, 86)',
+    green: 'rgb(75, 192, 192)',
+    blue: 'rgb(54, 162, 235)',
+    purple: 'rgb(153, 102, 255)',
+    grey: 'rgb(201, 203, 207)'
+  };
+  const config = {
+    type: 'line',
+    data: {
+      datasets: [{
+        borderColor: CHART_COLORS.red,
+        borderWidth: 1,
+        radius: 0,
+        data: data,
+      }]
+      // ,
+      // {
+      //   borderColor: Utils.CHART_COLORS.blue,
+      //   borderWidth: 1,
+      //   radius: 0,
+      //   data: data2,
+      // }]
+    },
+    options: {
+      animation,
+      interaction: {
+        intersect: false
+      },
+      plugins: {
+        legend: false
+      },
+      scales: {
+        x: {
+          type: 'linear'
+        }
+      }
+    }
+  };
+  const myChart = new Chart(
+    document.getElementById('myChart'), config
+  );
+  $(function () {
+
+    $('#bpm').highcharts({
+      chart: {
+        type: 'bar',
+        inverted: true
+      },
+      title: {
+        text: 'Air Pressure Gauge'
+      },
+      credits: {
+        enabled: false
+      },
+      tooltip: {
+        enabled: false
+      },
+      xAxis: {
+        lineColor: '#C0C0C0',
+        labels: {
+          enabled: false
+        },
+        tickLength: 0
+      },
+      yAxis: {
+        min: 0,
+        max: 20,
+        tickLength: 5,
+        tickWidth: 1,
+        tickColor: '#C0C0C0',
+        gridLineColor: '#C0C0C0',
+        gridLineWidth: 1,
+        minorTickInterval: 5,
+        minorTickWidth: 1,
+        minorTickLength: 5,
+        minorGridLineWidth: 0,
+
+        title: null,
+        labels: {
+          format: '{value} ba'
+        },
+        plotBands: [{
+          from: 0,
+          to: 5,
+          color: 'rgba(204,255,255,0.5)'
+
+        }, {
+          from: 5,
+          to: 10,
+          color: 'rgba(0,102,204,0.5)'
+        }, {
+          from: 10,
+          to: 15,
+          color: 'rgba(0,51,153,0.5)'
+        },
+        {
+          from: 15,
+          to: 20,
+          color: 'rgba(40,0,102,0.5)'
+        },
+        {}]
+      },
+      legend: {
+        enabled: false
+      },
+
+      series: [{
+        name: 'Air Pressure',
+        data: [11.5],
+        color: '#0033FF',
+        dataLabels: {
+          enabled: true,
+          align: 'right',
+          style: {
+            "color": "#FFCC33", "fontSize": "13px"
+          },
+          format: '{point.y} ba',
+          y: 10
+        }
+      }]
+
+    }, // Add some life
+      function (chart) {
+        setInterval(function () {
+          Highcharts.each(chart.series, function (serie) {
+            var point = serie.points[0],
+              newVal,
+              inc = (Math.random() - 0.5) * 20;
+
+            newVal = point.y + inc;
+            if (newVal < 0 || newVal > 20) {
+              newVal = point.y - inc;
+            }
+          });
+        }, 2000);
+      });
+  });
+</script>

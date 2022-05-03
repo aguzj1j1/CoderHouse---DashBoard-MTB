@@ -1,0 +1,11 @@
+footer {
+  background-color: #f4f4f4;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+.text-alineacion{
+  @extend footer;
+  line-height: 10px;
+  text-align: left;
+}

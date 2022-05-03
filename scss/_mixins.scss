@@ -1,0 +1,7 @@
+@mixin boxSizes($width, $height){
+    height: $height;
+    width: $width;
+}
+.box__chart {
+    @include boxSizes(100% !important, 400px!important);
+}

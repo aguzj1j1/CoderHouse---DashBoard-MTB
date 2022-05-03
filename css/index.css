@@ -14,7 +14,10 @@ footer {
   position: fixed;
   width: 100%;
 }
-
+footer div h3 {
+  line-height: 10px;
+  text-align: left;
+}
 .ul-navbar {
   margin-right: 29px;
 }
@@ -127,10 +130,7 @@ select.idiomas {
   /* margin-left: 90%; */
 }
 
-footer div h3 {
-  line-height: 10px;
-  text-align: left;
-}
+
 
 img.imgGrafico {
   height: 100%;

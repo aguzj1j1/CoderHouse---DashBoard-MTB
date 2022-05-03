@@ -1,3 +1,17 @@
+footer, .text-alineacion {
+  background-color: #f4f4f4;
+  bottom: 0;
+  position: fixed;
+  width: 100%; }
+
+.text-alineacion {
+  line-height: 10px;
+  text-align: left; }
+
+.box__chart {
+  height: 400px !important;
+  width: 100% !important; }
+
 header {
   background: #e8e8e8;
   width: 100%;

@@ -1,8 +1,12 @@
-$cool-red: #e8e8e8;
-$color-box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
-$color-nav-custom: #ccc;
+@import "extends";
+@import "mixins";
+$colors: (
+  color-nav-custom: #ccc,
+  cool-red: #e8e8e8,
+  color-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+);
 header {
-  background: $cool-red;
+  background: map-get($colors, cool-red);
   width: 100%;
   height: 110px !important;
   padding: 0;
@@ -25,7 +29,7 @@ header {
     font-size: 1.5rem;
   }
   button.header__burguerMenu:hover {
-    box-shadow: $color-box-shadow;
+    box-shadow: map-get($colors, color-box-shadow);
   }
   .nav-Custom-mobile .closeMenu {
     position: absolute;
@@ -40,7 +44,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $color-nav-custom;
+    background-color: map-get($colors, color-nav-custom);
   }
   .burgerMenu {
     display: flex;

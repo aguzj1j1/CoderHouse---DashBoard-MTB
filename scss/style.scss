@@ -79,8 +79,8 @@ header {
     }
   }
 }
-main{
-  margin-bottom:10px;
+main {
+  margin-bottom: 10px;
 }
 footer {
   background-color: #f4f4f4;
@@ -88,11 +88,11 @@ footer {
   // position: fixed;
   width: 100%;
   margin-top: 10px;
- 
- div h3 {
-  line-height: 10px;
-  text-align: left;
- }
+
+  div h3 {
+    line-height: 10px;
+    text-align: left;
+  }
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
@@ -118,7 +118,7 @@ input#menu:checked ~ .nav-Custom-mobile {
 }
 h1 {
   font-size: 52px;
-  font-style: italic;
+  // font-style: italic;
   color: grey;
   font-family: "Roboto", sans-serif;
 }

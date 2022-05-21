@@ -75,8 +75,23 @@ header {
       display: none;
     }
     nav ul {
-          flex-direction: column;
-        }
+      flex-direction: column;
+    }
+  }
+}
+main {
+  margin-bottom: 10px;
+}
+footer {
+  background-color: #f4f4f4;
+  bottom: 0;
+  // position: fixed;
+  width: 100%;
+  margin-top: 10px;
+
+  div h3 {
+    line-height: 10px;
+    text-align: left;
   }
 }
 .nav-pills .nav-link.active,
@@ -103,11 +118,22 @@ input#menu:checked ~ .nav-Custom-mobile {
 }
 h1 {
   font-size: 52px;
-  font-style: italic;
+  // font-style: italic;
   color: grey;
   font-family: "Roboto", sans-serif;
 }
 @media (min-width: 700px) {
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    &:hover {
+      background-color: #444;
+    }
+  }
   nav.nav-Custom-desktop {
     background-color: #ccc;
     float: left;
@@ -118,6 +144,11 @@ h1 {
   .navbar-sidebar {
     width: 280px;
     height: 760px;
+    a {
+      &:hover {
+        color: #f1f1f1 !important;
+      }
+    }
   }
 }
 
@@ -167,26 +198,26 @@ textarea {
   width: 100px;
 }
 
- @media (min-width: 500px) {
-   .formulario {
-     max-width: 768px;
-     grid-template-rows: repeat(10, auto);
-     grid-template-columns: repeat(12, 1fr);
-     gap: 10px;
-   }
-   .aumentar {
-     transition: transform 0.5s ease-in;
-   }
-   .aumentar:hover {
-     transform: scale(1.2);
-     // box-shadow: 0 0 15px rgb(0 0 0 / 30%);
-   }
-   input[type="text"],
-   input[type="email"] {
-     margin: 0;
-     margin-right: 10px;
-   }
- }
+@media (min-width: 500px) {
+  .formulario {
+    max-width: 768px;
+    grid-template-rows: repeat(10, auto);
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+  }
+  .aumentar {
+    transition: transform 0.5s ease-in;
+  }
+  .aumentar:hover {
+    transform: scale(1.2);
+    // box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+  }
+  input[type="text"],
+  input[type="email"] {
+    margin: 0;
+    margin-right: 10px;
+  }
+}
 // @media (min-width: 700px) {
 //   header nav ul {
 //     flex-direction: column;
@@ -207,3 +238,64 @@ textarea {
 // nav ul li a:hover {
 //   background: #1e1e1e;
 // }
+body {
+  background-color: #eee;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+}
+
+.c-details span {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 39px;
+}
+
+.badge span {
+  background-color: #fffbec;
+  width: 60px;
+  height: 25px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  display: flex;
+  color: #fed85d;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 10px;
+}
+
+.progress div {
+  background-color: red !important;
+}
+
+.text1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text2 {
+  color: #a5aec0;
+}
+
+.progress {
+  background-color: #efefef !important;
+}
+.progress div {
+  background-color: #bcb6b6 !important;
+}

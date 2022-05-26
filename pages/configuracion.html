@@ -5,16 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="description" content="Dashboard para que puedas medir tu perfomance y tu estado de salud en tu deporte favorito (por ahora solo mtb)">
-  <meta name="keywords"  content="MOUNTAINBIKE, BIKE, MOUNTAIN, FOX">
+  <meta name="description"
+    content="Dashboard para que puedas medir tu perfomance y tu estado de salud en tu deporte favorito (por ahora solo mtb)">
+  <meta name="keywords" content="MOUNTAINBIKE, BIKE, MOUNTAIN, FOX">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="./css/main.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/main.css">
   <title>Experiencia</title>
 </head>
 
@@ -36,7 +35,7 @@
       </div>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="index.html" class="nav-link active" aria-current="page">
+          <a href="../index.html" class="nav-link active" aria-current="page">
             <svg class="bi me-2" width="16" height="16"></svg>
             Gráficos
           </a>
@@ -72,7 +71,7 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="index.html" class="nav-link active" aria-current="page">
+          <a href="../index.html" class="nav-link active" aria-current="page">
             <svg class="bi me-2" width="16" height="16"></svg>
             Gráficos
           </a>
@@ -132,35 +131,65 @@
     <div>
       <h1> Configuraciones </h1>
     </div>
-    <form action="compañero.asp" class="formulario" method="post">
-      <div class="grid-header">
-        <div class="header-item"></div>
-        <div class="header-item">
-          <div>ruta</div>
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="first">Nombre</label>
+            <input type="text" class="form-control" placeholder="" id="nombre">
+          </div>
         </div>
-        <div class="header-item">Montaña</div>
-        <div class="header-item">Sendero</div>
-      </div>
-      <div class="grid-row">
-        <div class="flex-item">Senderos preferidos</div>
-        <!-- <label class="flex-item">
-            <input type="radio" value="critical" name="priority"> <span></span>
-        </label> -->
-        <label class="flex-item">
-          <input type="radio" value="ruta" name="priority"> <span></span>
-        </label>
-        <label class="flex-item">
-          <input type="radio" value="montaña" name="priority"> <span></span>
-        </label>
-        <label class="flex-item">
-          <input type="radio" value="sendero" name="priority"> <span></span>
-        </label>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="last">Apellido</label>
+            <input type="text" class="form-control" placeholder="" id="Apellido">
+          </div>
+        </div>
       </div>
 
 
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="company">Marca bicicleta</label>
+            <input type="text" class="form-control" placeholder="" id="bicicleta">
+          </div>
 
-      <input type="text" placeholder="Compañero favorito" class="input-compañero">
-      <input type="text" placeholder="telefono medico" class="input-telefono">
+
+        </div>
+        <div class="col-md-6">
+
+          <div class="form-group">
+            <label for="phone">Numero de cuadro</label>
+            <input type="tel" class="form-control" id="numero" placeholder="numero">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="email">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="url">Unidad de medida></label>
+            <input type="text" class="form-control" id="medida" placeholder="medida">
+          </div>
+
+        </div>
+      </div>
+      <div class="row mt-5">
+
+        <div class="col-xs-12 text-center">
+          <button type="submit" class="btn btn-primary">enviar</button>
+        </div>
+      </div>
+      </div>
     </form>
 
   </main>

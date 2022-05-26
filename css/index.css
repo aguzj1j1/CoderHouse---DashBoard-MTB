@@ -319,8 +319,8 @@ textarea {
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-areas:
       "header header  header"
-      "nav    content sidebar"
-      "nav    content ad"
+      "nav    main main"
+      "nav    main main"
       "footer footer  footer";
   }
   section img {
